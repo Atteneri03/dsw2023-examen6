@@ -5,12 +5,12 @@ require_once('../src/connection.php');
 
 use Dsw\Fct\models\User;
 
-class loginController
+class loginController extends Controller
 {
   public function login() {
-   global $blade;
-   global $router;
-   echo $blade->make('login.login', compact('router'))->render(); 
+  //  global $blade;
+  $router = $this->router;
+   echo $this->blade->make('login.login', compact('router'))->render(); 
   }
 
   public function validate() {

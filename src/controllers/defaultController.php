@@ -1,11 +1,10 @@
 <?php
 namespace Dsw\Fct\Controllers;
-
-class defaultController
-{
+require_once('../src/connection.php');
+class defaultController extends Controller{
   public function home() {
-    global $blade;    
-    global $router;
-    echo $blade->make('home', compact('router'))->render();
+    //  $blade = $this->blade;    
+     $router = $this->router;
+    echo $this->blade->make('home', compact('router'))->render();
   }
 }
